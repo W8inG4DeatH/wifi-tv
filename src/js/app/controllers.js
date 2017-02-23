@@ -19,10 +19,14 @@
             
     }]);
  
-    app.controller('myController', ['$rootScope', '$scope', '$http', '$window', '$location', '$anchorScroll', 'mainService', 'getWWWData', function($rootScope, $scope, $http, $window, $location, $anchorScroll, mainService, getWWWData) {
+    app.controller('myController', ['$rootScope', '$scope', '$http', '$timeout', '$window', '$location', '$anchorScroll', 'mainService', 'getWWWData', function($rootScope, $scope, $http, $timeout, $window, $location, $anchorScroll, mainService, getWWWData) {
 
         $scope.actualYear = new Date().getFullYear();
         $scope.activeOffer = 0;
+        $scope.quadButtons = [];
+        $scope.activeQuadButton = 0;
+        $scope.activeQuadButtonB = 0;
+        $scope.detailsFullViews = [];
 
         $scope.showWebsiteData = { 
             a1 : {mode: "FadeIn", selector: ".anim-1", stepTime: 500, delayTime: 0},
@@ -41,24 +45,31 @@
 
         $(window).load(function() {
 
-            /*
             $(window).scroll(function() {
 
                 var windowElement = $(window);
                 var windowScrollTop = windowElement.scrollTop();
                 var siteOfertaTopOffset = $('#site-oferta').offset().top - windowScrollTop;
-                var sitePobierzTopOffset = $('#site-pobierz').offset().top - windowScrollTop;
-                var bgImage= $('.bg-image');
+                var siteFeaturesTopOffset = $('#site-features').offset().top - windowScrollTop;
+                var bgImage = $('.bg-image');
+                var bgImageContainer = $('.bg-container');
 
-                if (sitePobierzTopOffset <= 0) {
-                    bgImage.attr('src', 'img/bg_'+3+'.jpg');
+                if (siteFeaturesTopOffset <= 0) {
+                    //bgImage.attr('src', 'img/bg_'+3+'.jpg');
+                    bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
                 } else if (siteOfertaTopOffset <= 0) {
-                    bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                    //bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                    bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
                 } else {
-                    bgImage.attr('src', 'img/bg_'+1+'.jpg');
+                    //bgImage.attr('src', 'img/bg_'+1+'.jpg');
+                    bgImageContainer.removeClass('bg-container-2').addClass('bg-container-1');
                 }
             });
-            */
+
+            $scope.featureElementHeight = $(".feature-element-container").height();
+            $scope.featureBElementHeight = $(".feature-element-B-container").height() * 1.5;
+
+            $scope.OnWindowResize();
 
             $('.siteLoader').hide();
 
@@ -84,7 +95,11 @@
                 bgContainer.width(1280 * height / 800);
                 var leftOffset = (width - bgContainer.width()) / 2;
                 bgContainer.css({top:0, left:leftOffset});
-            } 
+            }
+
+            // features
+            $('.feature-element-container').css({"height": $scope.featureElementHeight});
+            $('.feature-element-B-container').css({"height": $scope.featureBElementHeight});            
         };
 
         $scope.SetBG = function(numer) {
@@ -93,12 +108,14 @@
             bgImage.attr('src', path);
         };
 
-        $scope.ScrollSite = function(sectorId) {
-            $location.hash(sectorId);
-            $anchorScroll();
+        $scope.ScrollSite = function(sectorSelector) {
+            var windowElement = $(window);
+            var windowScrollTop = windowElement.scrollTop();            
+            var sectorTopOffset = $(sectorSelector).offset().top - windowScrollTop;            
+            $('html, body').animate({
+                scrollTop: sectorTopOffset
+            }, 1000);
         };
-
-        $scope.OnWindowResize();
 
     }]); 
 

@@ -16,16 +16,24 @@
 
 <body ng-controller="myController">
     
-        <div class="bg-container">
-            <img class="bg-image" src="" alt="BG">
+        <div class="bg-container bg-container-1">
+            <img class="bg-image" src="" alt="">
         </div>
 
         <div class="main-content">
 
             <div ng-view></div>
 
-            <footer layout="row" layout-align="center">
-                <h2>©&nbsp;2016-{{actualYear}}&nbsp;Diomar</h2>
+            <footer id="site-footer" class="section bg-container-1" layout="row" layout-align="center">
+                <div class="container" layout="column" layout-align="center" flex>
+                    <div class="row desc-container" layout="row" layout-align="center">
+                        <a href="https://www.facebook.com/Diomar-Sp-z-oo-342323862479431" target="_blank"><img class="social-icon" src="img/facebook-icon.png" alt="Facebook"></a>
+                        <a href="mailto:tv@diomar.pl?subject=Usługa Wifi-TV&cc=r.karbarz@diomar.pl&bcc=m.lipinski@diomar.pl"><img class="social-icon" src="img/mail-icon.png" alt="Facebook"></a>
+                    </div>
+                    <div class="row desc-container" layout="row" layout-align="center">
+                        <h3 class="desc">©&nbsp;2016-{{actualYear}}&nbsp;Diomar</h3>
+                    </div>
+                </div>                
             </footer>
 
         </div>

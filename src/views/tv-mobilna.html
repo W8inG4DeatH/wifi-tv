@@ -1,5 +1,5 @@
 <main layout="column">
-	<header id="site-header" class="section section-1" layout="column">
+	<header id="site-header" class="header-section section section-1" layout="column">
 		<div class="container" layout="column">
 			<div class="row" layout="column" layout-align="center center">
 				<div class="logo-container" layout="row" layout-align="center">
@@ -13,7 +13,7 @@
 				<h3 class="desc">System dystrybucji treści audiowizualnych na urządzenia mobilne.</h3>
 			</div>
 			<div class="row" layout="row" layout-align="center">
-				<div ng-click="ScrollSite('site-oferta')" class="wifi-button-container cursor-pointer">S P R A W D Ź</div>
+				<div ng-click="ScrollSite('#site-oferta')" class="wifi-button-container cursor-pointer">S P R A W D Ź</div>
 			</div>
 		</div>
 	</header>
@@ -28,13 +28,181 @@
 				</div>
 			</div>
 			<div class="row" layout="row" layout-wrap>
-				<div class="container" layout="column" flex="100" flex-gt-sm="50">
-					<p>Dynamiczny przyrost liczby Użytkowników korzystających z urządzeń mobilnych jak smartfony, tablety, laptopy itp. stworzył na rynku nowy silnie rosnący trend, polegający na chęci odbioru różnorodnych treści multimedialnych właśnie na tych urządzeniach. Rynek urządzeń mobilnych cechuje się jednak innymi oczekiwaniami w odbiorze treści multimedialnych niż rynek stacjonarnych sieci telekomunikacyjnych jak DVB-T, CATV, IPTV itp. Odpowiadając na to wyzwanie, przygotowaliśmy specjalnie opracowany system dystrybucji treści audiowizualnych na urządzenia mobilne, obejmujący w szczególności programy TV, prezentacje multimedialne, podgląd z kamer i inne podobne sygnały AV.</p>
+				<div class="container" layout="column" flex="100" flex-gt-md="50">
+					<p>Dynamiczny przyrost liczby Użytkowników korzystających z urządzeń mobilnych jak smartfony, tablety, laptopy itp. stworzył na rynku nowy silnie rosnący trend, polegający na chęci odbioru różnorodnych treści multimedialnych właśnie na tych urządzeniach. Rynek urządzeń mobilnych cechuje się jednak innymi oczekiwaniami w odbiorze treści multimedialnych niż rynek stacjonarnych sieci telekomunikacyjnych jak DVB-T, CATV, IPTV itp.</p>
+					<p>Odpowiadając na to wyzwanie, przygotowaliśmy specjalnie opracowany system dystrybucji treści audiowizualnych na urządzenia mobilne, obejmujący w szczególności programy TV, prezentacje multimedialne, podgląd z kamer i inne podobne sygnały AV.</p>
 				</div>
-				<div class="container responsive-image-container" layout="column" flex="100" flex-gt-sm="50">
+				<div class="container responsive-image-container" layout="column" flex="100" flex-gt-md="50">
 					<img class="responsive-image" src="img/diomar_tv_1.jpg" alt="Diomar TV Mobilna">
+				</div>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<div class="container responsive-image-container" layout="column" flex="100" flex-gt-md="50">
+					<img class="responsive-image" src="img/diomar_tv_2.jpg" alt="Diomar TV Mobilna Program">
+				</div>
+				<div class="container" layout="column" flex="100" flex-gt-md="50">
+					<p>W odróżnieniu od innych rozwiązań na rynku, nasz system nie korzysta z sieci Internet lecz bazuje wyłącznie na transmisji poprzez wewnętrzną zamkniętą sieć WiFi. Nie korzystamy również z treści pozyskiwanych poza siecią Użytkownika, lecz tylko tych dostępnych lub wytworzonych w wewnętrznej sieci Użytkownika, co pozwala na istotną redukcję problemów wynikających z ograniczeń prawnych związanych z licencjami, prawami autorskimi itp.</p>
+					<p>W naszym rozwiązaniu całość treści multimedialnych jest pozyskiwana przez Użytkownika a następnie reemitowana w Jego zamkniętej wewnętrznej sieci telekomunikacyjnej, bez udostępniania transmisji tych treści na zewnątrz, podobnie jak to jest realizowane w stacjonarnych sieciach kablowych. Korzystamy zatem ze wszystkich uwarunkowań prawnych dotyczących sieci stacjonarnych a jednocześnie likwidujemy barierę konieczności podłączenia się do kabla sygnałowego.</p>
 				</div>
 			</div>
 		</div>
 	</section>		
+	<section id="site-features" class="section section-1" layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="row">
+				<h2>Podstawowe zalety oferowanego rozwiązania</h2>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<divider></divider>
+				<div ng-click="activeQuadButton = 0" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButton === 0) || (quadButtons[0] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButton = 1" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButton === 1) || (quadButtons[1] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButton = 2" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButton === 2) || (quadButtons[2] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+			</div>
+		</div>
+		<div class="container feature-element-container" layout="column">
+			<div ng-show="activeQuadButton === 0" class="feature-element row" layout="row">
+				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
+				<div><p>możliwość swobodnego poruszania się odbiorców tej usługi w obszarze funkcjonowania wewnętrznej sieci WiFi na terenie Użytkownika bez utraty możliwości oglądania ważnego wydarzenia sportowego, wiadomości, notowań na giełdzie, podglądu z kamer z sali konferencyjnej itp.</p></div>
+			</div>
+			<div ng-show="activeQuadButton === 1" class="feature-element row" layout="row">
+				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
+				<div><p>brak tzw. walki o pilota – w tym samym pomieszczeniu więcej niż jedna osoba może jednocześnie oglądać różne programy TV, korzystając ze swoich urządzeń (smartfon, tablet, laptop).</p></div>
+			</div>
+			<div ng-show="activeQuadButton === 2" class="feature-element row" layout="row">
+				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
+				<div><p>możliwość łatwego wyświetlenia prezentacji multimedialnych i innych treści AV wytworzonych lokalnie przez Użytkownika.</p></div>
+			</div>
+		</div>
+	</section>
+	<section id="site-video" class="section section-2" layout="row">
+		<div class="container" layout="column">
+			<div class="row" layout="row" layout="center">
+				<video width="640" height="360" autoplay="autoplay" controls="controls">
+					<source src="assets/reklama.mp4" type="video/mp4"> 
+					<source src="assets/reklama.webm" type="video/webm"> 
+					<source src="assets/reklama.ogv" type="video/ogg">
+					Brak wsparcia dla video
+				</video>			
+			</div>
+		</div>
+	</section>	
+	<section id="site-features2" class="section section-1" layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="row">
+				<h2>Jak to jest zrealizowane</h2>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<divider></divider>
+				<div ng-click="activeQuadButtonB = 0" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 0) || (quadButtons[0] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonB = 1" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 1) || (quadButtons[1] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonB = 2" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 2) || (quadButtons[2] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonB = 3" ng-mouseover="quadButtons[3] = true" ng-mouseleave="quadButtons[3] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 3) || (quadButtons[3] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+			</div>
+		</div>
+		<div class="container feature-element-B-container" layout="column">
+			<div ng-show="activeQuadButtonB === 0" class="feature-element-B row" layout="row">
+				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
+				<div><p>System przejmuje treści multimedialne udostępnione przez Użytkownika w technologii strumieni IPTV (np. ze stacji czołowej IPTV) lub w postaci prezentacji multimedialnych (klipy wideo, pokazy slajdów itp.) a następnie przetwarza je w sposób odpowiedni do transmisji na urządzenia mobilne. W szczególności następuje zmniejszenie rozdzielczości sygnału wideo oraz znaczące ograniczenie przepływności poszczególnych strumieni, aby nie spowodować przeciążenia sieci WiFi.</p></div>
+			</div>
+			<div ng-show="activeQuadButtonB === 1" class="feature-element-B row" layout="row">
+				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
+				<div><p>System autoryzuje wszystkie urządzenia mobilne przed udostępnieniem treści multimedialnych. Dzięki temu dostęp do tych treści uzyskają tylko uprawnieni odbiorcy tej usługi. Wymóg autoryzacji może być pominięty w tych sieciach WiFi, gdzie autoryzacja nastąpiła już wcześniej – np. podczas samego procesu logowania do sieci WiFi.</p></div>
+			</div>
+			<div ng-show="activeQuadButtonB === 2" class="feature-element-B row" layout="row">
+				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
+				<div><p>Po prawidłowym procesie autoryzacji system udostępnia treści multimedialne gotowe do odtwarzania bezpośrednio poprzez przeglądarkę internetową. Odbiorcy tej usługi nie muszą instalować żadnych aplikacji na swoich urządzeniach. Nie ma zatem bariery korzystania z tej usługi przez odbiorców, którzy nie chcą zainstalować na swoich urządzeniach aplikacji dedykowanej do tego rozwiązania.</p></div>
+			</div>
+			<div ng-show="activeQuadButtonB === 3" class="feature-element-B row" layout="row">
+				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
+				<div><p>System posiada wewnętrzne zabezpieczenia przed długotrwałym korzystaniem z transmisji na poszczególne urządzenie mobilne. Po czasie zdefiniowanym przez Użytkownika systemu, transmisja na takie urządzenie mobilne jest zatrzymywana i może zostać wznowiona dopiero po ponownym uruchomieniu przez danego odbiorcę tej usługi. Domyślnie takie zatrzymanie transmisji oraz konieczność jej ponownego uruchomienia następuje raz na dobę, ale ten czas może być skrócony zgodnie z oczekiwaniem Użytkownika. Celem tego ograniczenia jest uniknięcie ewentualnych problemów z transmisją treści na urządzenia, które np. pozostały podłączone do ładowarki sieciowej na noc i w sposób ciągły pobierają treści, nie będąc w rzeczywistości wykorzystywane przez danego odbiorcę.</p></div>
+			</div>
+		</div>
+	</section>
+	<section id="site-details" class="section section-2" layout="row">
+		<div class="container" layout="column">
+			<div class="container" layout="column">
+				<div class="row" layout="row" layout-align="center">
+					<h2>Typowa konfiguracja systemu</h2>
+				</div>
+				<div class="row" layout="row" layout-align="center">
+					<divider></divider>			
+				</div>
+				<div class="row desc-container" layout="row" layout-align="center">
+					<h3 class="desc">Typowy system może składać się z jednego serwera obsługującego komunikację z urządzeniami mobilnymi oraz z kilku serwerów transkodujących.</h3>
+				</div>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<div class="container" layout="column" layout-align="start" flex="100" flex-gt-md="33">
+					<div class="row" layout="row" layout-align="center">
+						<img src="img/details_1.jpg" alt="Serwer">
+					</div>
+					<div class="row" layout="row" layout-align="center">
+						<h4>Serwer</h4>
+					</div>
+					<div class="row" layout="column">
+						<div class="center-text" layout="row" layout-align="center">
+							<p>Podstawowym elementem oferowanego systemu jest serwer obsługujący komunikację z urządzeniami mobilnymi.</p>
+						</div>
+						<div class="center-text" layout="row" layout-align="center">
+							<p ng-show="detailsFullViews[0]">Ten serwer integruje się z istniejącą siecią komputerową Użytkownika, w szczególności z siecią WiFi, do której będzie realizowana transmisja treści multimedialnych. Zalecane jest zapewnienie zdalnego dostępu do tego serwera w celu bieżącego monitorowania poprawności pracy systemu oraz innych bieżących prac serwisowych. Podstawową funkcją serwera obsługującego komunikację z urządzeniami mobilnymi jest integrowanie w sobie wszystkich programów TV transkodowanych przez współpracujące dedykowane serwery transkodujące oraz ich udostępnianie na poszczególne urządzenia mobilne. Jeżeli system obsługuje ograniczone grono odbiorców usługi, wówczas wolne zasoby tego serwera można przeznaczyć na ewentualne transkodowanie np. 2-3 programów w jakości HD. Wraz ze wzrostem liczby użytkowników systemu oraz wzrastającym obciążeniem serwera może być konieczne ograniczenie liczby transkodowanych programów TV do 1-2 programów HD.</p>
+						</div>
+					</div>
+					<div ng-hide="detailsFullViews[0]" class="row" layout="row" layout-align="center">
+						<div ng-click="detailsFullViews[0] = true" class="wifi-button-container cursor-pointer">W I Ę C E J</div>
+					</div>
+					<div ng-show="detailsFullViews[0]" class="row" layout="row" layout-align="center">
+						<div ng-click="detailsFullViews[0] = false" class="wifi-button-container cursor-pointer">Z W I Ń</div>
+					</div>
+				</div>
+				<div class="container" layout="column" layout-align="start" flex="100" flex-gt-md="33">
+					<div class="row" layout="row" layout-align="center">
+						<img src="img/details_2.jpg" alt="System">
+					</div>
+					<div class="row" layout="row" layout-align="center">
+						<h4>System</h4>
+					</div>
+					<div class="row" layout="column">
+						<div class="center-text" layout="row" layout-align="center">
+							<p>W systemie może pracować kilka serwerów transkodujących treści multimedialne.</p>
+						</div>
+						<div class="center-text" layout="row" layout-align="center">
+							<p ng-show="detailsFullViews[1]">W zależności od liczby programów TV i ich rozdzielczości, które następnie są udostępniane na platformie mobilnej. Serwery transkodujące przetwarzają programy TV i inne treści multimedialne do mniejszej przepływności bitowej (max. 1,4Mbit/s dla programów HD transkodowanych do formatu transmisji mobilnej). Typowa wydajność jednego serwera to ok. 5-6 programów TV w jakości HD.</p>
+						</div>
+					</div>
+					<div ng-hide="detailsFullViews[1]" class="row" layout="row" layout-align="center">
+						<div ng-click="detailsFullViews[1] = true" class="wifi-button-container cursor-pointer">W I Ę C E J</div>
+					</div>
+					<div ng-show="detailsFullViews[1]" class="row" layout="row" layout-align="center">
+						<div ng-click="detailsFullViews[1] = false" class="wifi-button-container cursor-pointer">Z W I Ń</div>
+					</div>
+				</div>
+				<div class="container" layout="column" layout-align="start" flex="100" flex-gt-md="33">
+					<div class="row" layout="row" layout-align="center">
+						<img src="img/details_3.jpg" alt="Kompatybilność">
+					</div>
+					<div class="row" layout="row" layout-align="center">
+						<h4>Kompatybilność</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="site-trial" class="section section-1" layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="row" layout-align="center">
+				<h2>Zgłoś się po wersję demo</h2>
+			</div>
+			<div class="row" layout="row" layout-align="center">
+				<divider></divider>
+			</div>
+			<div class="row desc-container" layout="row" layout-align="center">
+				<h3 class="desc">Sprawdź jak działa nasz System DEMO.</h3>
+			</div>
+			<div class="row" layout="row" layout-align="center">
+				<a href="mailto:tv@diomar.pl?subject=Prośba o rejestrację Wifi-TV&body=Proszę o rejestrację w celu wypróbania systemu DEMO Wifi-TV&cc=r.karbarz@diomar.pl&bcc=m.lipinski@diomar.pl" target="_blank"><div class="wifi-button-container cursor-pointer">R E J E S T R A C J A</div></a>
+			</div>
+		</div>
+	</section>
+
 </main>

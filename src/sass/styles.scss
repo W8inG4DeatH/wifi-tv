@@ -51,6 +51,10 @@ li {
 	display: block;
 	vertical-align: middle;
 }
+p
+{
+	margin-bottom: 20px;
+}
 
 a:hover {
 	text-decoration: none;
@@ -79,8 +83,38 @@ section
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	padding: 70px 30px;
+}
+
+.header-section
+{
 	padding: 100px 30px;
 }
+
+.section-1
+{
+	divider
+	{
+		border-bottom: 1px solid $color-white;
+	}
+
+	.wifi-button-container
+	{
+		color: $color-black;
+		background-color: $color-white;
+		font-size: 1.6rem;
+		padding: 5px 30px;
+		border: 1px solid white;
+		border-radius: 5px;
+		@include transition();
+	}
+	.wifi-button-container:hover
+	{
+		color: $color-white;
+		background-color: rgba(255,255,255,0.1);
+	}	
+}
+
 .section-2 
 {
 	color: $color-medium;
@@ -90,6 +124,31 @@ section
 	{
 		color: $color-global;
 	}
+	divider
+	{
+		border-bottom: 1px solid $color-medium;
+	}
+
+	.wifi-button-container
+	{
+		color: $color-black;
+		font-size: 1.6rem;
+		padding: 5px 30px;
+		border: 1px solid $color-medium;
+		border-radius: 5px;
+		@include transition();
+	}
+	.wifi-button-container:hover
+	{
+		background-color: rgba(0,0,0,0.05);
+	}	
+}
+
+divider
+{
+	margin: 30px 30px 30px 0;
+	height: 1px;
+	width: 120px;
 }
 
 .container {
@@ -108,17 +167,33 @@ section
 {
 	position: fixed;
 
-	background: #86be8e; /* Old browsers */
-	background: -moz-linear-gradient(45deg, #86be8e 0%, #4562b5 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(45deg, #86be8e 0%,#4562b5 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(45deg, #86be8e 0%,#4562b5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86be8e', endColorstr='#4562b5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
 	.bg-image
 	{
 		width: 100%;
 		height: 100%;
 	}
+}
+
+.bg-container-1
+{
+	background: #86be8e; /* Old browsers */
+	background: -moz-linear-gradient(45deg, #86be8e 0%, #4562b5 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #86be8e 0%,#4562b5 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg, #86be8e 0%,#4562b5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86be8e', endColorstr='#4562b5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.bg-container-2
+{
+	background: #43585b; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #43585b 0%, #a0a59b 50%, #767c72 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #43585b 0%,#a0a59b 50%,#767c72 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #43585b 0%,#a0a59b 50%,#767c72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43585b', endColorstr='#767c72',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.center-text
+{
+	text-align: center;
 }
 
 .bolder
@@ -132,14 +207,6 @@ section
 	z-index: 100;
 }
 
-divider
-{
-	margin: 30px 0;
-	height: 1px;
-	width: 120px;
-	border-bottom: 1px solid $color-medium;
-}
-
 .responsive-image-container
 {
 	overflow: hidden;
@@ -150,16 +217,46 @@ divider
 	}	
 }
 
-.wifi-button-container
+.quad-button-container
 {
-	font-size: 1.6rem;
-	padding: 5px 30px;
+	font-size: 2rem;
+	line-height: 2rem;
+	padding: 10px;
+	margin-left: 50px;
+	width: 70px;
+	height: 70px;
 	border: 1px solid white;
 	border-radius: 5px;
+	transform: rotate(45deg);
 }
-.wifi-button-container:hover
+.quad-button-container:hover
 {
 	background-color: rgba(255,255,255,0.13);
+}
+.quad-button
+{
+	transform: rotate(-45deg);
+	margin-left: 15px;
+	margin-top: -7px;
+}
+.quad-button-B
+{
+	margin: 0;
+}
+
+.desc-container
+{
+	text-align: center;
+	.desc
+	{
+		font-size: 1.7rem;
+		line-height: 3.4rem;
+	}		
+}
+
+.social-icon
+{
+	margin: 0 20px;
 }
 
 #site-header
@@ -174,15 +271,11 @@ divider
 		text-align: center;
 		margint-top: 30px;
 	}
-	.desc-container
-	{
-		text-align: center;
-		.desc
-		{
-			font-size: 1.7rem;
-			line-height: 3.4rem;
-		}		
-	}
+}
+
+#site-footer
+{
+	padding: 130px 0;
 }
 
 
