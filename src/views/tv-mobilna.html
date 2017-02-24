@@ -1,5 +1,5 @@
 <main layout="column">
-	<header id="site-header" class="header-section section section-1" layout="column">
+	<header id="site-header" class="header-section section section-1 anim-1" layout="column">
 		<div class="container" layout="column">
 			<div class="row" layout="column" layout-align="center center">
 				<div class="logo-container" layout="row" layout-align="center">
@@ -17,7 +17,7 @@
 			</div>
 		</div>
 	</header>
-	<section id="site-oferta" class="section section-2" layout="row">
+	<section id="site-oferta" class="section section-2 anim-2" layout="row">
 		<div class="container" layout="column">
 			<div class="container" layout="column">
 				<div class="row" layout="row">
@@ -47,78 +47,82 @@
 			</div>
 		</div>
 	</section>		
-	<section id="site-features" class="section section-1" layout="column">
+	<section id="site-features" class="section section-1 anim-3" layout="column">
 		<div class="container" layout="column">
 			<div class="row" layout="row">
 				<h2>Podstawowe zalety oferowanego rozwiązania</h2>
 			</div>
 			<div class="row" layout="row" layout-wrap>
 				<divider></divider>
-				<div ng-click="activeQuadButton = 0" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButton === 0) || (quadButtons[0] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
-				<div ng-click="activeQuadButton = 1" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButton === 1) || (quadButtons[1] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
-				<div ng-click="activeQuadButton = 2" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButton === 2) || (quadButtons[2] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButton = 0; quadButtonsManual[0] = true;" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButton === 0) || (quadButtons[0] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButton = 1; quadButtonsManual[0] = true;" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButton === 1) || (quadButtons[1] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButton = 2; quadButtonsManual[0] = true;" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButton === 2) || (quadButtons[2] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
 			</div>
 		</div>
 		<div class="container feature-element-container" layout="column">
-			<div ng-show="activeQuadButton === 0" class="feature-element row" layout="row">
+			<div ng-if="activeQuadButton === 0" class="feature-element row" layout="row">
 				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
 				<div><p>możliwość swobodnego poruszania się odbiorców tej usługi w obszarze funkcjonowania wewnętrznej sieci WiFi na terenie Użytkownika bez utraty możliwości oglądania ważnego wydarzenia sportowego, wiadomości, notowań na giełdzie, podglądu z kamer z sali konferencyjnej itp.</p></div>
 			</div>
-			<div ng-show="activeQuadButton === 1" class="feature-element row" layout="row">
+			<div ng-if="activeQuadButton === 1" class="feature-element row" layout="row">
 				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
 				<div><p>brak tzw. walki o pilota – w tym samym pomieszczeniu więcej niż jedna osoba może jednocześnie oglądać różne programy TV, korzystając ze swoich urządzeń (smartfon, tablet, laptop).</p></div>
 			</div>
-			<div ng-show="activeQuadButton === 2" class="feature-element row" layout="row">
+			<div ng-if="activeQuadButton === 2" class="feature-element row" layout="row">
 				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
 				<div><p>możliwość łatwego wyświetlenia prezentacji multimedialnych i innych treści AV wytworzonych lokalnie przez Użytkownika.</p></div>
 			</div>
 		</div>
 	</section>
-	<section id="site-video" class="section section-2" layout="row">
+	<section id="site-video" class="section section-2 anim-4" layout="row">
 		<div class="container" layout="column">
 			<div class="row" layout="row" layout="center">
-				<video width="640" height="360" autoplay="autoplay" controls="controls">
-					<source src="assets/reklama.mp4" type="video/mp4"> 
-					<source src="assets/reklama.webm" type="video/webm"> 
-					<source src="assets/reklama.ogv" type="video/ogg">
-					Brak wsparcia dla video
-				</video>			
+				<div class="tablet-video-container">
+					<div class="tablet-micro"></div>
+					<div class="tablet-headphone"></div>
+					<video class="tablet-video" width="640" height="360" autoplay="autoplay" loop="loop" controls="controls">
+						<source src="assets/presentation.mp4" type="video/mp4"> 
+						<source src="assets/presentation.webm" type="video/webm"> 
+						<source src="assets/presentation.ogv" type="video/ogg">
+						Brak wsparcia dla video
+					</video>
+				</div>
 			</div>
 		</div>
 	</section>	
-	<section id="site-features2" class="section section-1" layout="column">
+	<section id="site-features2" class="section section-1 anim-5" layout="column">
 		<div class="container" layout="column">
 			<div class="row" layout="row">
 				<h2>Jak to jest zrealizowane</h2>
 			</div>
 			<div class="row" layout="row" layout-wrap>
 				<divider></divider>
-				<div ng-click="activeQuadButtonB = 0" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 0) || (quadButtons[0] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
-				<div ng-click="activeQuadButtonB = 1" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 1) || (quadButtons[1] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
-				<div ng-click="activeQuadButtonB = 2" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 2) || (quadButtons[2] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
-				<div ng-click="activeQuadButtonB = 3" ng-mouseover="quadButtons[3] = true" ng-mouseleave="quadButtons[3] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 3) || (quadButtons[3] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonB = 0; quadButtonsManual[1] = true;" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 0) || (quadButtons[0] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonB = 1; quadButtonsManual[1] = true;" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 1) || (quadButtons[1] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonB = 2; quadButtonsManual[1] = true;" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 2) || (quadButtons[2] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonB = 3; quadButtonsManual[1] = true;" ng-mouseover="quadButtons[3] = true" ng-mouseleave="quadButtons[3] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonB === 3) || (quadButtons[3] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
 			</div>
 		</div>
 		<div class="container feature-element-B-container" layout="column">
-			<div ng-show="activeQuadButtonB === 0" class="feature-element-B row" layout="row">
+			<div ng-if="activeQuadButtonB === 0" class="feature-element-B row" layout="row">
 				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
 				<div><p>System przejmuje treści multimedialne udostępnione przez Użytkownika w technologii strumieni IPTV (np. ze stacji czołowej IPTV) lub w postaci prezentacji multimedialnych (klipy wideo, pokazy slajdów itp.) a następnie przetwarza je w sposób odpowiedni do transmisji na urządzenia mobilne. W szczególności następuje zmniejszenie rozdzielczości sygnału wideo oraz znaczące ograniczenie przepływności poszczególnych strumieni, aby nie spowodować przeciążenia sieci WiFi.</p></div>
 			</div>
-			<div ng-show="activeQuadButtonB === 1" class="feature-element-B row" layout="row">
+			<div ng-if="activeQuadButtonB === 1" class="feature-element-B row" layout="row">
 				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
 				<div><p>System autoryzuje wszystkie urządzenia mobilne przed udostępnieniem treści multimedialnych. Dzięki temu dostęp do tych treści uzyskają tylko uprawnieni odbiorcy tej usługi. Wymóg autoryzacji może być pominięty w tych sieciach WiFi, gdzie autoryzacja nastąpiła już wcześniej – np. podczas samego procesu logowania do sieci WiFi.</p></div>
 			</div>
-			<div ng-show="activeQuadButtonB === 2" class="feature-element-B row" layout="row">
+			<div ng-if="activeQuadButtonB === 2" class="feature-element-B row" layout="row">
 				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
 				<div><p>Po prawidłowym procesie autoryzacji system udostępnia treści multimedialne gotowe do odtwarzania bezpośrednio poprzez przeglądarkę internetową. Odbiorcy tej usługi nie muszą instalować żadnych aplikacji na swoich urządzeniach. Nie ma zatem bariery korzystania z tej usługi przez odbiorców, którzy nie chcą zainstalować na swoich urządzeniach aplikacji dedykowanej do tego rozwiązania.</p></div>
 			</div>
-			<div ng-show="activeQuadButtonB === 3" class="feature-element-B row" layout="row">
+			<div ng-if="activeQuadButtonB === 3" class="feature-element-B row" layout="row">
 				<div>&bull;&nbsp;&nbsp;&nbsp;</div>
 				<div><p>System posiada wewnętrzne zabezpieczenia przed długotrwałym korzystaniem z transmisji na poszczególne urządzenie mobilne. Po czasie zdefiniowanym przez Użytkownika systemu, transmisja na takie urządzenie mobilne jest zatrzymywana i może zostać wznowiona dopiero po ponownym uruchomieniu przez danego odbiorcę tej usługi. Domyślnie takie zatrzymanie transmisji oraz konieczność jej ponownego uruchomienia następuje raz na dobę, ale ten czas może być skrócony zgodnie z oczekiwaniem Użytkownika. Celem tego ograniczenia jest uniknięcie ewentualnych problemów z transmisją treści na urządzenia, które np. pozostały podłączone do ładowarki sieciowej na noc i w sposób ciągły pobierają treści, nie będąc w rzeczywistości wykorzystywane przez danego odbiorcę.</p></div>
 			</div>
 		</div>
 	</section>
-	<section id="site-details" class="section section-2" layout="row">
+	<section id="site-details" class="section section-2 anim-6" layout="row">
 		<div class="container" layout="column">
 			<div class="container" layout="column">
 				<div class="row" layout="row" layout-align="center">
@@ -188,7 +192,7 @@
 		</div>
 	</section>
 
-	<section id="site-trial" class="section section-1" layout="column">
+	<section id="site-trial" class="section section-1 anim-7 layout="column">
 		<div class="container" layout="column">
 			<div class="row" layout="row" layout-align="center">
 				<h2>Zgłoś się po wersję demo</h2>

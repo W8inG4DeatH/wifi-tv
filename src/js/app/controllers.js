@@ -22,10 +22,13 @@
     app.controller('myController', ['$rootScope', '$scope', '$http', '$timeout', '$window', '$location', '$anchorScroll', 'mainService', 'getWWWData', function($rootScope, $scope, $http, $timeout, $window, $location, $anchorScroll, mainService, getWWWData) {
 
         $scope.actualYear = new Date().getFullYear();
-        $scope.activeOffer = 0;
         $scope.quadButtons = [];
+        $scope.numberOfActiveQuadButtons = 3;
         $scope.activeQuadButton = 0;
+        $scope.numberOfActiveQuadButtonsB = 4;
         $scope.activeQuadButtonB = 0;
+        $scope.quadButtonsAutoStep = 5000;
+        $scope.quadButtonsManual = [];
         $scope.detailsFullViews = [];
 
         $scope.showWebsiteData = { 
@@ -35,12 +38,7 @@
             a4 : {mode: "FadeIn", selector: ".anim-4", stepTime: 500, delayTime: 0},
             a5 : {mode: "FadeIn", selector: ".anim-5", stepTime: 500, delayTime: 0},
             a6 : {mode: "FadeIn", selector: ".anim-6", stepTime: 500, delayTime: 0},
-            a7 : {mode: "FadeIn", selector: ".anim-7", stepTime: 500, delayTime: 0},
-            a8 : {mode: "FadeIn", selector: ".anim-8", stepTime: 500, delayTime: 0},
-            a9 : {mode: "FadeIn", selector: ".anim-9", stepTime: 500, delayTime: 0},
-            a10 : {mode: "FadeIn", selector: ".anim-A", stepTime: 500, delayTime: 0},
-            a11 : {mode: "FadeIn", selector: ".anim-B", stepTime: 500, delayTime: 0},
-            a12 : {mode: "FadeIn", selector: ".anim-C", stepTime: 500, delayTime: 0}
+            a7 : {mode: "FadeIn", selector: ".anim-7", stepTime: 500, delayTime: 0}
         };
 
         $(window).load(function() {
@@ -70,10 +68,11 @@
             $scope.featureBElementHeight = $(".feature-element-B-container").height() * 1.5;
 
             $scope.OnWindowResize();
+            $scope.IntervalInit();
 
             $('.siteLoader').hide();
 
-            //mainService.ShowWebsite($scope.showWebsiteData);
+            mainService.ShowWebsite($scope.showWebsiteData);
 
         });
 
@@ -102,6 +101,28 @@
             $('.feature-element-B-container').css({"height": $scope.featureBElementHeight});            
         };
 
+        $scope.IntervalInit = function() {
+            setInterval(function() {
+                if (!$scope.quadButtonsManual[0])
+                {
+                    $scope.activeQuadButton ++;
+                    if ($scope.activeQuadButton >= $scope.numberOfActiveQuadButtons)
+                    {
+                        $scope.activeQuadButton = 0;
+                    }
+                }
+                if (!$scope.quadButtonsManual[1])
+                {
+                    $scope.activeQuadButtonB ++;
+                    if ($scope.activeQuadButtonB >= $scope.numberOfActiveQuadButtonsB)
+                    {
+                        $scope.activeQuadButtonB = 0;
+                    }
+                }
+                $scope.$apply();
+            }, $scope.quadButtonsAutoStep);
+        };
+
         $scope.SetBG = function(numer) {
             var bgImage= $('.bg-image');
             var path = 'img/bg_'+numer+'.jpg';
@@ -127,6 +148,7 @@
         angular.element(document).ready(function() {
 
         });
+
     }]);
 
 })();
