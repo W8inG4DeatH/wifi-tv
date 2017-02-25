@@ -132,7 +132,7 @@
         $scope.ScrollSite = function(sectorSelector) {
             var windowElement = $(window);
             var windowScrollTop = windowElement.scrollTop();            
-            var sectorTopOffset = $(sectorSelector).offset().top - windowScrollTop;            
+            var sectorTopOffset = $(sectorSelector).offset().top;
             $('html, body').animate({
                 scrollTop: sectorTopOffset
             }, 1000);
