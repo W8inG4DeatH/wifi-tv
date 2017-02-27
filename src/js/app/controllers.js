@@ -31,6 +31,14 @@
         $scope.quadButtonsManual = [];
         $scope.detailsFullViews = [];
 
+        $scope.showForm = false;
+        $scope.form = {
+            imienazwisko: '',
+            firma: '',
+            telefon: '',
+            wiadomosc: 'Proszę o rejestrację w celu wypróbowania systemu DEMO.'
+        };
+
         $scope.showWebsiteData = { 
             a1 : {mode: "FadeIn", selector: ".anim-1", stepTime: 500, delayTime: 0},
             a2 : {mode: "FadeIn", selector: ".anim-2", stepTime: 500, delayTime: 0},
@@ -38,7 +46,8 @@
             a4 : {mode: "FadeIn", selector: ".anim-4", stepTime: 500, delayTime: 0},
             a5 : {mode: "FadeIn", selector: ".anim-5", stepTime: 500, delayTime: 0},
             a6 : {mode: "FadeIn", selector: ".anim-6", stepTime: 500, delayTime: 0},
-            a7 : {mode: "FadeIn", selector: ".anim-7", stepTime: 500, delayTime: 0}
+            a7 : {mode: "FadeIn", selector: ".anim-7", stepTime: 500, delayTime: 0},
+            a8 : {mode: "FadeIn", selector: ".anim-8", stepTime: 500, delayTime: 0}
         };
 
         $(window).load(function() {
@@ -64,9 +73,6 @@
                 }
             });
 
-            $scope.featureElementHeight = $(".feature-element-container").height();
-            $scope.featureBElementHeight = $(".feature-element-B-container").height() * 1.5;
-
             $scope.OnWindowResize();
             $scope.IntervalInit();
 
@@ -81,6 +87,7 @@
         });
 
         $scope.OnWindowResize = function() {
+            /*
             var width = $( window ).width();
             var height = $( window ).height();
             var bgContainer = $('.bg-container');
@@ -95,10 +102,12 @@
                 var leftOffset = (width - bgContainer.width()) / 2;
                 bgContainer.css({top:0, left:leftOffset});
             }
-
             // features
-            $('.feature-element-container').css({"height": $scope.featureElementHeight});
-            $('.feature-element-B-container').css({"height": $scope.featureBElementHeight});            
+            $scope.featureElementHeight = $(".feature-element-container").height();
+            $scope.featureBElementHeight = $(".feature-element-B-container").height() * 1.5;
+            $('.feature-element-container').css({"height": $scope.featureElementHeight, "min-height": $scope.featureElementHeight, "max-height": $scope.featureElementHeight});
+            $('.feature-element-B-container').css({"height": $scope.featureBElementHeight, "min-height": $scope.featureBElementHeight, "max-height": $scope.featureBElementHeight});            
+            */
         };
 
         $scope.IntervalInit = function() {

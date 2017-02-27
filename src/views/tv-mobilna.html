@@ -6,11 +6,11 @@
 					<a href="http://www.diomar.pl" target="_blank"><img src="img/wifi-tv-logo.png" alt="Logo"></a>
 				</div>
 				<div class="title" layout="row" layout-align="center">
-					<h1>Usługa <span class="bolder">WiFi-TV</span>, telewizja wszędzie<br>na komputerze, tablecie, smartphonie.</h1>
+					<h1>System dystrybucji treści audiowizualnych<br>na laptopy, tablety, smartfony</h1>
 				</div>
 			</div>
 			<div class="row desc-container" layout="row" layout-align="center">
-				<h3 class="desc">System dystrybucji treści audiowizualnych na urządzenia mobilne.</h3>
+				<h3 class="desc">Telewizja i reklama multimedialna w sieciach Wi-Fi<br>Hoteli, Centrów Handlowych, Dworców, Lotnisk itp.</h3>
 			</div>
 			<div class="row" layout="row" layout-align="center">
 				<div ng-click="ScrollSite('#site-oferta')" class="wifi-button-container cursor-pointer">S P R A W D Ź</div>
@@ -192,8 +192,8 @@
 		</div>
 	</section>
 
-	<section id="site-trial" class="section section-1 anim-7 layout="column">
-		<div class="container" layout="column">
+	<section id="site-trial" class="section section-1" layout="column">
+		<div class="container anim-7" layout="column">
 			<div class="row" layout="row" layout-align="center">
 				<h2>Zgłoś się po wersję demo</h2>
 			</div>
@@ -203,9 +203,96 @@
 			<div class="row desc-container" layout="row" layout-align="center">
 				<h3 class="desc">Sprawdź jak działa nasz System DEMO.</h3>
 			</div>
-			<div class="row" layout="row" layout-align="center">
-				<a href="mailto:tv@diomar.pl?subject=Prośba o rejestrację Wifi-TV&body=Proszę o rejestrację w celu wypróbowania systemu DEMO Wifi-TV&cc=r.karbarz@diomar.pl&bcc=m.lipinski@diomar.pl" target="_blank"><div class="wifi-button-container cursor-pointer">R E J E S T R A C J A</div></a>
+			<div class="row registration-button-container" layout="row" layout-align="center">
+				<div ng-click="showForm = true" class="wifi-button-container cursor-pointer">R E J E S T R A C J A</div>
 			</div>
+		</div>
+		<div layout="row" layout-wrap>
+			<div id="site-formular" class="container" layout="column" layout-align="start" flex="100" flex-gt-md="50">
+				<div ng-show="showForm" class="row form-container" layout="row">
+					<divider></divider>
+				</div>
+				<div ng-show="showForm" class="row form-container" layout="row" layout-align="center">
+					<form name="formularz" class="form-horizontal" method="post" action="php/kontakt.php" novalidate layout="column" flex>
+						<div layout="row">
+							<md-input-container flex>
+	          					<label>Imię i nazwisko</label>
+	          					<input required name="imienazwisko" ng-model="form.imienazwisko">
+	          					<div ng-messages="formularz.imienazwisko.$error">
+	            					<div ng-message="required">Imię i nazwisko jest wymagane.</div>
+	            				</div>
+					        </md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex>
+	          					<label>Firma</label>
+	          					<input required name="firma" ng-model="form.firma">
+	          					<div ng-messages="formularz.firma.$error">
+	            					<div ng-message="required">Nazwa firmy jest wymagana.</div>
+	            				</div>
+					        </md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex>
+	        					<label>Telefon</label>
+	        					<input required type="telefon" name="telefon" ng-model="form.telefon"/>
+	          					<div ng-messages="formularz.telefon.$error">
+	            					<div ng-message="required">Telefon jest wymagany.</div>
+	            				</div>
+					    	</md-input-container>
+	  					</div>
+						<div layout="row">
+							<md-input-container class="md-block" flex>
+	        					<label>E-mail</label>
+	        					<input required type="email" name="email" ng-model="form.email" ng-pattern="/^.+@.+\..+$/"/>
+	        					<div ng-messages="formularz.email.$error">
+	          						<div ng-message="['required', 'pattern']">Wymagany jest poprawny adres e-mail.</div>
+	          					</div>
+					    	</md-input-container>
+	  					</div>
+						<div layout="row">
+							<md-input-container class="md-block" flex>
+					        	<label>Wiadomość</label>
+					        	<textarea ng-model="form.wiadomosc" rows="2" md-select-on-focus></textarea>
+					        </md-input-container>
+						</div>
+						<div layout="row" layout-align="center">
+							<div id="submit" name="submit" type="submit" class="wifi-button-container cursor-pointer">Wyślij</div>
+			            </div>
+			        </form>
+				</div>
+			</div>
+			<div id="site-contact" class="container anim-8" layout="column" layout-align="start" flex="100" flex-gt-md="50">
+				<div class="row" layout="row">
+					<divider></divider>
+				</div>
+				<div class="row" layout="row">
+					<div class="contact-icon-container">
+						<i class="material-icons contact-icon">store</i>						
+					</div>
+					<div class="contact-desc-container" ayout="column">
+						<div>Diomar Sp. z o.o.</div>
+						<div>Na Skraju 34</div>
+						<div>02-197 Warszawa</div>
+					</div>
+				</div>
+				<div class="row" layout="row">
+					<div class="contact-icon-container">
+						<i class="material-icons contact-icon">settings_phone</i>						
+					</div>
+					<div class="contact-desc-container" layout="column">
+						<div>+48 22 846 04 88</div>
+					</div>
+				</div>
+				<div class="row" layout="row">
+					<div class="contact-icon-container">
+						<i class="material-icons contact-icon">mail</i>						
+					</div>
+					<div class="contact-desc-container" layout="column">
+						<div><a href="mailto:tv@diomar.pl?subject=Zapytanie dot. Wifi-TV&cc=r.karbarz@diomar.pl&bcc=m.lipinski@diomar.pl" target="_blank">tv@diomar.pl</a></div>
+					</div>
+				</div>
+			</div>			
 		</div>
 	</section>
 

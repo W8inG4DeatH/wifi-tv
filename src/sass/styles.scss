@@ -1,6 +1,6 @@
 @import "mixins";
 
-$color-wizjotech: #e67817;
+$color-diomar: #2f91bc;
 $color-global: #606060; 
 $color-medium: #909090;
 $color-light: #e8e8e8;
@@ -18,7 +18,7 @@ body {
 	color: $color-white;
     font-size: 2rem; 	// = 20px
     line-height: 3rem;
-    @include link-colors($color-wizjotech,$color-wizjotech,$color-light,$color-wizjotech);
+    @include link-colors($color-diomar,$color-diomar,$color-light,$color-diomar);
     background-color: #000000;
 }
 ul, ol {
@@ -166,6 +166,10 @@ divider
 .bg-container
 {
 	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 
 	.bg-image
 	{
@@ -198,7 +202,7 @@ divider
 
 .bolder
 {
-	font-weight: bolder;
+	font-weight: bold;
 }
 
 .main-content
@@ -321,6 +325,44 @@ divider
 	padding: 130px 0;
 }
 
+.form-horizontal
+{
+	md-input-container
+	{
+		input, textarea
+		{
+			color: $color-white;			
+		}
+	}
+}
+
+.registration-button-container, .form-container
+{
+	@include transition();
+}
+.contact-icon-container
+{
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	padding: 10px 10px 8px 10px;
+	margin: 0 20px;
+	border: 1px solid $color-light;
+	border-radius: 30px;
+	.contact-icon
+	{
+
+	}
+}
+.contact-desc-container
+{
+	margin-top: 10px;
+	@include link-colors($color-light,$color-light,$color-light,$color-light);
+	a
+	{
+		text-decoration: underline;
+	}
+}
 
 /////////////////////////////////////////////////////////////
 // ANIMATIONS //
