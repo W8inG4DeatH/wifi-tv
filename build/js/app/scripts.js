@@ -10,6 +10,16 @@
                 templateUrl: 'views/tv-mobilna.html',
                 label: 'TV-Mobilna'
             })
+            .when('/kontakt-sukces', {
+                controller: 'kontaktController',
+                templateUrl: 'views/kontakt-sukces.html',
+                label: 'Kontakt'
+            })
+            .when('/kontakt-niepowodzenie', {
+                controller: 'kontaktController',
+                templateUrl: 'views/kontakt-niepowodzenie.html',
+                label: 'Kontakt'
+            })
             .otherwise({
                 redirectTo: '/tv-mobilna'
             });            
@@ -50,27 +60,68 @@
             a8 : {mode: "FadeIn", selector: ".anim-8", stepTime: 500, delayTime: 0}
         };
 
+        $scope.activeSelector = '#site-header';
+
         $(window).load(function() {
 
+            
             $(window).scroll(function() {
 
-                var windowElement = $(window);
-                var windowScrollTop = windowElement.scrollTop();
-                var siteOfertaTopOffset = $('#site-oferta').offset().top - windowScrollTop;
-                var siteFeaturesTopOffset = $('#site-features').offset().top - windowScrollTop;
-                var bgImage = $('.bg-image');
-                var bgImageContainer = $('.bg-container');
+                $timeout.cancel($scope.timeScroll);
 
-                if (siteFeaturesTopOffset <= 0) {
-                    //bgImage.attr('src', 'img/bg_'+3+'.jpg');
-                    bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
-                } else if (siteOfertaTopOffset <= 0) {
-                    //bgImage.attr('src', 'img/bg_'+2+'.jpg');
-                    bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
-                } else {
-                    //bgImage.attr('src', 'img/bg_'+1+'.jpg');
-                    bgImageContainer.removeClass('bg-container-2').addClass('bg-container-1');
-                }
+                $scope.timeScroll = $timeout(function() {
+
+                    var windowElement = $(window);
+                    var windowScrollTop = windowElement.scrollTop();
+                    var bgImage = $('.bg-image');
+                    var bgImageContainer = $('.bg-container');
+
+                    var siteOferta = $('#site-oferta').offset().top - windowScrollTop;
+                    var siteFeatures = $('#site-features').offset().top - windowScrollTop;
+                    var siteFeatures2 = $('#site-features2').offset().top - windowScrollTop;
+                    var siteDetails = $('#site-details').offset().top - windowScrollTop;
+                    var siteTrial = $('#site-trial').offset().top - windowScrollTop;
+                    var siteContact = $('#site-contact').offset().top - windowScrollTop;
+ 
+                    if (siteContact <= 0) {
+                        // console.log('siteContact');
+                        // bgImage.attr('src', 'img/bg_'+3+'.jpg');
+                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                        $scope.activeSelector = '#site-contact';
+                    } else if (siteTrial <= 0) {
+                        // console.log('siteTrial');
+                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                        $scope.activeSelector = '#site-trial';
+                    } else if (siteDetails <= 0) {
+                        // console.log('siteDetails');
+                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                        $scope.activeSelector = '#site-details';
+                    } else if (siteFeatures2 <= 0) {
+                        // console.log('siteFeatures2');
+                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                        $scope.activeSelector = '#site-features2';
+                    } else if (siteFeatures <= 0) {
+                        // console.log('siteFeatures');
+                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                        $scope.activeSelector = '#site-features';
+                    } else if (siteOferta <= 0) {
+                        // console.log('siteOferta');
+                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                        $scope.activeSelector = '#site-oferta';
+                    } else {
+                        // console.log('siteHeader');
+                        // bgImage.attr('src', 'img/bg_'+1+'.jpg');
+                        bgImageContainer.removeClass('bg-container-2').addClass('bg-container-1');
+                        $scope.activeSelector = '#site-header';
+                    }
+
+                }, 300);
+
             });
 
             $scope.OnWindowResize();
@@ -147,13 +198,37 @@
             }, 1000);
         };
 
+        $scope.SlideUpAndDownByClass = function(elementClass) {
+            $(elementClass).slideUp($scope.slideTime).slideDown($scope.slideTime);
+        };
+
+        $scope.childsSlided = [];
+        $scope.SlideUpAndDownChildByClass = function(e,elementChildClass) {
+            if ($scope.childsSlided[elementChildClass] !== true)
+            {
+                $(e.currentTarget).find(elementChildClass).slideUp($scope.slideTime).slideDown($scope.slideTime);
+                $scope.childsSlided = [];
+                $scope.childsSlided[elementChildClass] = true;                
+            }
+        };
+
+        $scope.SlideUpChildByClass = function(e,elementChildClass) {
+            $(e.currentTarget).find(elementChildClass).slideUp($scope.slideTime);
+        };
+        $scope.SlideDownChildByClass = function(e,elementChildClass) {
+            $(e.currentTarget).find(elementChildClass).slideDown($scope.slideTime);
+        };
+
     }]); 
 
-    ////////////
-    // OFERTA //
-    ////////////
-
     app.controller('tvMobilnaController', ['$scope', 'mainService', function($scope, mainService){
+        angular.element(document).ready(function() {
+
+        });
+
+    }]);
+
+    app.controller('kontaktController', ['$scope', 'mainService', function($scope, mainService){
         angular.element(document).ready(function() {
 
         });

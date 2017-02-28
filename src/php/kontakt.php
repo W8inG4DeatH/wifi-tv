@@ -9,13 +9,13 @@
 	// $odbiorca = "tv@diomar.pl";
 	// $odbiorcaCC = "r.karbarz@diomar.pl";
 	// $odbiorcaBCC = "m.lipinski@diomar.pl";
-	$odbiorca = "lipinski.m@o2.pl";
-	$odbiorcaCC = "m.lipinski@diomar.pl";
+	$odbiorca = "tv@diomar.pl";
+	$odbiorcaCC = "r.karbarz@diomar.pl";
 	$odbiorcaBCC = "m.lipinski@diomar.pl";
 	$client_ip = $_SERVER['REMOTE_ADDR'];
 
 	// WIADOMOŚĆ GŁÓWNA
-	$temat = "Wiadomość z formularza na www.wifi-tv.pl";
+	$temat = "Prośba o rejestrację na www.wifi-tv.pl";
 	$wiadomosc = '<html>'.
 	'<body>'.
 	'<p>Formularz z IP: '.$client_ip.'</p>'.
@@ -32,11 +32,10 @@
 	$naglowki .= "Reply-To: $nadawca \r\n";
 	
 	$sukces = mail($odbiorca, $temat, $wiadomosc, $naglowki);
-	mail($odbiorcaCC, $temat, $wiadomosc, $naglowki);
 	mail($odbiorcaBCC, $temat, $wiadomosc, $naglowki);
 
 	// WIADOMOŚĆ ZWROTNA
-	$tematZ = "Potwierdzenie wysłania wiadomości z formularza na www.wifi-tv.pl";
+	$tematZ = "Potwierdzenie wysłania prośby o rejestrację na www.wifi-tv.pl";
 	$wiadomoscZ = '<html>'.
 	'<body>'.
 	'<p>Wysłałeś do nas następującą wiadomość:</p>'.
@@ -54,13 +53,13 @@
 	$naglowkiZ .= "Reply-To: $odbiorca \r\n";
 
 	mail($nadawca, $tematZ, $wiadomoscZ, $naglowkiZ);
-	mail($odbiorcaR, $tematZ, $wiadomoscZ, $naglowkiZ);
+	mail($odbiorcaBCC, $tematZ, $wiadomoscZ, $naglowkiZ);
 
 	// Przekierowywujemy na potwierdzenie
 	if ($sukces){
-		print "<meta http-equiv=\"refresh\" content=\"0;URL=http://test.flash-developer.pl/kontakt/wyslano\">";
+		print "<meta http-equiv=\"refresh\" content=\"0;URL=http://www.wifi-tv.pl/#/kontakt-sukces\">";
 	}
 	else{
-		print "<meta http-equiv=\"refresh\" content=\"0;URL=http://test.flash-developer.pl/kontakt/blad\">";
+		print "<meta http-equiv=\"refresh\" content=\"0;URL=http://www.wifi-tv.pl/#/kontakt-niepowodzenie\">";
 	}
 ?>

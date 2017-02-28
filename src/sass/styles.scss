@@ -3,9 +3,9 @@
 $color-diomar: #2f91bc;
 $color-global: #606060; 
 $color-medium: #909090;
-$color-light: #e8e8e8;
+$color-light: #e0e0e0;
 $color-black: #333333;
-$color-white: #eeeeee;
+$color-white: #ffffff;
 
 @include selection($color-global,$color-white);
 
@@ -298,9 +298,51 @@ divider
 	margin: 0 20px;
 }
 
+.top-menu-container
+{
+	position: fixed;
+	z-index: 8888;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.8);
+	@include block-selection();
+
+	.top-menu-element
+	{
+		padding: 8px 20px;
+		height: 30px;
+		color: $color-light;
+		.element-number
+		{
+			font-size: 1.2rem;
+			line-height: 1.2rem;
+			margin-right: 5px;
+		}
+		.element-desc
+		{
+			padding-top: 10px;
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+		}
+	}
+
+	.top-menu-element-active
+	{
+		.element-number
+		{
+			color: $color-diomar
+		}
+		.element-desc
+		{
+			color: $color-diomar
+		}
+	}
+}
+
 #site-header
 {
-	padding: 130px 0;
+	padding: 200px 0 130px 0;
 	.logo-container
 	{
 		margin-bottom: 20px;

@@ -1,4 +1,16 @@
 <main layout="column">
+
+    <nav class="top-menu-container" layout="row" layout-align="center">
+        <ul layout="row" layout-wrap>
+            <li ng-click="activeSelector = '#site-oferta'; ScrollSite(activeSelector);" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-01');" ng-class="{'top-menu-element-active': (activeSelector == '#site-oferta')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">01</div><div class="element-desc element-desc-01">System</div></div></li>
+            <li ng-click="activeSelector = '#site-features'; ScrollSite(activeSelector);" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-02');" ng-class="{'top-menu-element-active': (activeSelector == '#site-features')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">02</div><div class="element-desc element-desc-02">Zalety</div></div></li>
+            <li ng-click="activeSelector = '#site-features2'; ScrollSite(activeSelector);" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-03');" ng-class="{'top-menu-element-active': (activeSelector == '#site-features2')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">03</div><div class="element-desc element-desc-03">Realizacja</div></div></li>
+            <li ng-click="activeSelector = '#site-details'; ScrollSite(activeSelector);" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-04');" ng-class="{'top-menu-element-active': (activeSelector == '#site-details')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">04</div><div class="element-desc element-desc-04">Konfiguracja</div></div></li>
+            <li ng-click="activeSelector = '#site-trial'; ScrollSite(activeSelector);" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-05');" ng-class="{'top-menu-element-active': (activeSelector == '#site-trial')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">05</div><div class="element-desc element-desc-05">Demo</div></div></li>
+            <li ng-click="activeSelector = '#site-contact'; ScrollSite(activeSelector);" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-06');" ng-class="{'top-menu-element-active': (activeSelector == '#site-contact')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">06</div><div class="element-desc element-desc-06">Kontakt</div></div></li>
+        </ul>
+    </nav>
+
 	<header id="site-header" class="header-section section section-1 anim-1" layout="column">
 		<div class="container" layout="column">
 			<div class="row" layout="column" layout-align="center center">
@@ -204,7 +216,7 @@
 				<h3 class="desc">Sprawdź jak działa nasz System DEMO.</h3>
 			</div>
 			<div class="row registration-button-container" layout="row" layout-align="center">
-				<div ng-click="showForm = true" class="wifi-button-container cursor-pointer">R E J E S T R A C J A</div>
+				<div ng-click="showForm = true; ScrollSite('#site-formular');" class="wifi-button-container cursor-pointer">R E J E S T R A C J A</div>
 			</div>
 		</div>
 		<div layout="row" layout-wrap>
@@ -253,11 +265,11 @@
 						<div layout="row">
 							<md-input-container class="md-block" flex>
 					        	<label>Wiadomość</label>
-					        	<textarea ng-model="form.wiadomosc" rows="2" md-select-on-focus></textarea>
+					        	<textarea ng-model="form.wiadomosc" name="wiadomosc" rows="2" md-select-on-focus></textarea>
 					        </md-input-container>
 						</div>
 						<div layout="row" layout-align="center">
-							<div id="submit" name="submit" type="submit" class="wifi-button-container cursor-pointer">Wyślij</div>
+							<button id="submit" name="submit" type="submit" class="wifi-button-container cursor-pointer">Wyślij</button>
 			            </div>
 			        </form>
 				</div>
