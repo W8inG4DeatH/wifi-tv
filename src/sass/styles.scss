@@ -6,6 +6,7 @@ $color-medium: #909090;
 $color-light: #e0e0e0;
 $color-black: #333333;
 $color-white: #ffffff;
+$color-warning: #ef5624;
 
 @include selection($color-global,$color-white);
 
@@ -188,11 +189,11 @@ divider
 }
 .bg-container-2
 {
-	background: #43585b; /* Old browsers */
-	background: -moz-linear-gradient(-45deg, #43585b 0%, #a0a59b 50%, #767c72 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-45deg, #43585b 0%,#a0a59b 50%,#767c72 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(135deg, #43585b 0%,#a0a59b 50%,#767c72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43585b', endColorstr='#767c72',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background: #475149; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #475149 0%, #b2b4b1 40%, #b2b4b1 40%, #b2b4b1 60%, #475149 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #475149 0%,#b2b4b1 40%,#b2b4b1 40%,#b2b4b1 60%,#475149 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #475149 0%,#b2b4b1 40%,#b2b4b1 40%,#b2b4b1 60%,#475149 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#475149', endColorstr='#475149',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .center-text
@@ -362,26 +363,47 @@ divider
 {
 }
 
-#site-footer
-{
-	padding: 130px 0;
-}
-
-.form-horizontal
-{
-	md-input-container
-	{
-		input, textarea
-		{
-			color: $color-white;			
-		}
-	}
-}
-
 .registration-button-container, .form-container
 {
 	@include transition();
 }
+
+#site-formular
+{
+	.form-horizontal
+	{
+		md-input-container
+		{
+			label
+			{
+				color: $color-light;
+				&::after
+				{
+					color: $color-light;					
+				}
+			}
+			input, textarea
+			{
+				border-bottom: 1px solid $color-light;
+				color: $color-white;
+			}
+		}
+		md-input-container:not(.md-input-invalid).md-input-focused .md-input
+		{
+			color: $color-white;
+		}
+	}
+
+	md-input-container
+	{
+		.ng-invalid-required
+		{
+			color: $color-warning !important;
+		} 
+	}
+
+}
+
 .contact-icon-container
 {
 	height: 30px;
@@ -404,6 +426,11 @@ divider
 	{
 		text-decoration: underline;
 	}
+}
+
+#site-footer
+{
+	padding: 130px 0;
 }
 
 /////////////////////////////////////////////////////////////

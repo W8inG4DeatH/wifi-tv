@@ -6,17 +6,17 @@
 	$wiadomosc = $_POST['wiadomosc'];
 
 	$nadawca = $email;
-	// $odbiorca = "tv@diomar.pl";
-	// $odbiorcaCC = "r.karbarz@diomar.pl";
-	// $odbiorcaBCC = "m.lipinski@diomar.pl";
 	$odbiorca = "tv@diomar.pl";
 	$odbiorcaCC = "r.karbarz@diomar.pl";
 	$odbiorcaBCC = "m.lipinski@diomar.pl";
+	// $odbiorca = "m.lipinski@diomar.pl";
+	// $odbiorcaCC = "lipinski.m@o2.pl";
+	// $odbiorcaBCC = "lipinski.mac@gmail.com";
 	$client_ip = $_SERVER['REMOTE_ADDR'];
 
 	// WIADOMOŚĆ GŁÓWNA
 	$temat = "Prośba o rejestrację na www.wifi-tv.pl";
-	$wiadomosc = '<html>'.
+	$tresc = '<html>'.
 	'<body>'.
 	'<p>Formularz z IP: '.$client_ip.'</p>'.
 	'<p>Imię i nazwisko: '.$imienazwisko.'</p>'.
@@ -31,12 +31,12 @@
 	$naglowki .= "From: $nadawca\r\n";
 	$naglowki .= "Reply-To: $nadawca \r\n";
 	
-	$sukces = mail($odbiorca, $temat, $wiadomosc, $naglowki);
-	mail($odbiorcaBCC, $temat, $wiadomosc, $naglowki);
+	$sukces = mail($odbiorca, $temat, $tresc, $naglowki);
+	mail($odbiorcaBCC, $temat, $tresc, $naglowki);
 
 	// WIADOMOŚĆ ZWROTNA
 	$tematZ = "Potwierdzenie wysłania prośby o rejestrację na www.wifi-tv.pl";
-	$wiadomoscZ = '<html>'.
+	$trescZ = '<html>'.
 	'<body>'.
 	'<p>Wysłałeś do nas następującą wiadomość:</p>'.
 	'<p>Imię i nazwisko: '.$imienazwisko.'</p>'.
@@ -52,8 +52,8 @@
 	$naglowkiZ .= "From: $odbiorca\r\n";
 	$naglowkiZ .= "Reply-To: $odbiorca \r\n";
 
-	mail($nadawca, $tematZ, $wiadomoscZ, $naglowkiZ);
-	mail($odbiorcaBCC, $tematZ, $wiadomoscZ, $naglowkiZ);
+	mail($nadawca, $tematZ, $trescZ, $naglowkiZ);
+	mail($odbiorcaBCC, $tematZ, $trescZ, $naglowkiZ);
 
 	// Przekierowywujemy na potwierdzenie
 	if ($sukces){

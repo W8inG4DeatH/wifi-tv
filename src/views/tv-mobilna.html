@@ -269,7 +269,7 @@
 					        </md-input-container>
 						</div>
 						<div layout="row" layout-align="center">
-							<button id="submit" name="submit" type="submit" class="wifi-button-container cursor-pointer">Wyślij</button>
+							<button ng-disabled="formularz.imienazwisko.$error.required || formularz.firma.$error.required || formularz.telefon.$error.required || formularz.email.$error.required || formularz.email.$error.pattern" id="submit" name="submit" type="submit" class="wifi-button-container cursor-pointer">Wyślij</button>
 			            </div>
 			        </form>
 				</div>
