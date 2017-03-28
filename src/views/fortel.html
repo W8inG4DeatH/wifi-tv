@@ -1,0 +1,158 @@
+<main layout="column">
+
+	<header id="site-header" class="header-section section section-1" layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="column" layout-align="center center">
+				<div class="logo-container" layout="row" layout-align="center">
+					<img src="img/fortel-logo.png" class="logo" alt="Fortel">
+				</div>
+				<div class="title" layout="row" layout-align="center">
+					<h1>Ogólnopolskie Forum Operatorów Telekomunikacyjnych<br>FORTEL 2017</h1>
+				</div>
+			</div>
+			<div class="row desc-container" layout="row" layout-align="center">
+				<h3 class="desc">Iława, 27 marca 2017 r.</h3>
+			</div>
+		</div>
+	</header>
+	<section id="site-oferta" class="section section-2" layout="row">
+		<div class="container" layout="column">
+			<div class="container" layout="column"> 
+				<div class="row" layout="row">
+					<a href="assets/Fortel_-_prezentacja.pdf" target="_blank"><h2>Prezentacja w <img class="pdf-icon" src="img/pdf-icon_50x50.png"></h2></a>
+				</div>
+			</div>
+		</div>
+	</section>		
+	<section id="site-features" class="section section-1 " layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="row">
+				<h2>Jednostki oświatowe a dostęp do internetu - liczby</h2>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<divider></divider>
+				<div ng-click="activeQuadButtonF1 = 0; quadButtonsManual[2] = true;" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF1 === 0) || (quadButtons[0] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF1 = 1; quadButtonsManual[2] = true;" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF1 === 1) || (quadButtons[1] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF1 = 2; quadButtonsManual[2] = true;" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF1 === 2) || (quadButtons[2] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF1 = 3; quadButtonsManual[2] = true;" ng-mouseover="quadButtons[3] = true" ng-mouseleave="quadButtons[3] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF1 === 3) || (quadButtons[3] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF1 = 4; quadButtonsManual[2] = true;" ng-mouseover="quadButtons[4] = true" ng-mouseleave="quadButtons[4] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF1 === 4) || (quadButtons[4] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF1 = 5; quadButtonsManual[2] = true;" ng-mouseover="quadButtons[5] = true" ng-mouseleave="quadButtons[5] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF1 === 5) || (quadButtons[5] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+			</div>
+		</div>
+		<div class="container feature-element-container" layout="column">
+			<div ng-if="activeQuadButtonF1 === 0" class="feature-element row" layout="row">
+				<div><p>30,5 tys. jednostek</p>
+				<p>19,5 tys. lokalizacji</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF1 === 1" class="feature-element row" layout="row">
+				<div><p>36% lokalizacji w miejscowościach do 1000 mieszkańców</p>
+				<p>52% - w miejscowościach do 5000 mieszkańców</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF1 === 2" class="feature-element row" layout="row">
+				<div><p>Ponad 40% jednostek korzysta z usług do 10 Mb/s</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF1 === 3" class="feature-element row" layout="row">
+				<div><p>Ok. 5,8 tys. lokalizacji objęte komercyjnymi planami inwestycyjnymi</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF1 === 4" class="feature-element row" layout="row">
+				<div><p>4,4 tys. lokalizacji w zasięgu 100 Mb/s</p>
+				<p>Usługi w ok. 1,2 tys.</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF1 === 5" class="feature-element row" layout="row">
+				<div><p>8,1 tys. lokalizacji w złożonych wnioskach PO PC</p></div>
+			</div>
+		</div>
+	</section>
+	<section id="site-video" class="section section-2" layout="row">
+		<div class="container" layout="column">
+			<div class="row" layout="row" layout="center">
+				<div class="container responsive-image-container" layout="column" flex="100">
+					<img class="responsive-image" src="img/fortel-mapa.jpg" alt="Fortel - mapa">
+				</div>			
+			</div>
+		</div>
+	</section>	
+	<section id="site-features2" class="section section-1" layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="row">
+				<h2>Ogólnopolska Sieć Edukacyjna – model dostępu w PO PC</h2>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<divider></divider>
+				<div ng-click="activeQuadButtonF2 = 0; quadButtonsManual[3] = true;" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF2 === 0) || (quadButtons[0] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF2 = 1; quadButtonsManual[3] = true;" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF2 === 1) || (quadButtons[1] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF2 = 2; quadButtonsManual[3] = true;" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF2 === 2) || (quadButtons[2] === true)" class="quad-button-B"><img src="img/trybe-icon.png" alt="feature"></div></div>
+			</div>
+		</div>
+		<div class="container feature-element-B-container" layout="column">
+			<div ng-if="activeQuadButtonF2 === 0" class="feature-element-B row" layout="row">
+				<div><p>Obowiązek podłączenia jednostek: doprowadzenie infrastruktury oraz wykonanie LAN</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF2 === 1" class="feature-element-B row" layout="row">
+				<div><p>Obowiązek zaprojektowania sieci w architekturze pozwalającej na oddanie ruchu ze wszystkich jednostek w jednym węźle na danym obszarze</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF2 === 2" class="feature-element-B row" layout="row">
+				<div><p>Obowiązek stosowania technologii spełniających określone wymagania na parametry usług</p></div>
+			</div>
+		</div>
+	</section>
+	<section id="site-oferta" class="section section-2" layout="row">
+		<div class="container" layout="column">
+			<div class="container" layout="column">
+				<div class="row" layout="row">
+					<divider></divider>			
+				</div>
+			</div>
+		</div>
+	</section>		
+	<section id="site-features" class="section section-1 " layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="row">
+				<h2>Ogólnopolska Sieć Edukacyjna – najważniejsze założenia</h2>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<divider></divider>
+				<div ng-click="activeQuadButtonF3 = 0; quadButtonsManual[4] = true;" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF3 === 0) || (quadButtons[0] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF3 = 1; quadButtonsManual[4] = true;" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF3 === 1) || (quadButtons[1] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF3 = 2; quadButtonsManual[4] = true;" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF3 === 2) || (quadButtons[2] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF3 = 3; quadButtonsManual[4] = true;" ng-mouseover="quadButtons[3] = true" ng-mouseleave="quadButtons[3] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF3 === 3) || (quadButtons[3] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF3 = 4; quadButtonsManual[4] = true;" ng-mouseover="quadButtons[4] = true" ng-mouseleave="quadButtons[4] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF3 === 4) || (quadButtons[4] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF3 = 5; quadButtonsManual[4] = true;" ng-mouseover="quadButtons[5] = true" ng-mouseleave="quadButtons[5] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF3 === 5) || (quadButtons[5] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+			</div>
+		</div>
+		<div class="container feature-element-container" layout="column">
+			<div ng-if="activeQuadButtonF3 === 0" class="feature-element row" layout="row">
+				<div><p>Sieć wirtualna</p>
+				<p>Możliwość połączenia wszystkich jednostek oświatowych w jedną sieć teleinformatyczną</p>
+				<p>Jeden operator</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF3 === 1" class="feature-element row" layout="row">
+				<div><p>Dostęp do internetu</p>
+				<p>Dostęp do usług i treści edukacyjnych za pomocą internetowej platformy</p>
+				<p>Usługi cyberbezpieczeństwa</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF3 === 2" class="feature-element row" layout="row">
+				<div><p>Dobrowolność korzystania z usług</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF3 === 3" class="feature-element row" layout="row">
+				<div><p>Finansowanie z budżetu państwa – co najmniej w pierwszych latach</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF3 === 4" class="feature-element row" layout="row">
+				<div><p>Rozpoczęcie świadczenia usług – rok szkolny 2018/19</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF3 === 5" class="feature-element row" layout="row">
+				<div><p>Ustawa – konsultacje na początku II kwartału</p></div>
+			</div>
+		</div>
+	</section>
+	<section id="site-video" class="section section-2" layout="row">
+		<div class="container" layout="column">
+			<div class="row" layout="row" layout="center">
+				<div class="container responsive-image-container" layout="column" flex="100">
+					<img class="responsive-image" src="img/fortel-model-zadania.jpg" alt="Fortel - mapa">
+				</div>			
+			</div>
+		</div>
+	</section>	
+
+</main>

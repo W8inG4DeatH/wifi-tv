@@ -10,6 +10,11 @@
                 templateUrl: 'views/tv-mobilna.html',
                 label: 'TV-Mobilna'
             })
+            .when('/fortel', {
+                controller: 'fortelController',
+                templateUrl: 'views/fortel.html',
+                label: 'Fortel'
+            })
             .when('/kontakt-sukces', {
                 controller: 'kontaktController',
                 templateUrl: 'views/kontakt-sukces.html',
@@ -37,6 +42,12 @@
         $scope.activeQuadButton = 0;
         $scope.numberOfActiveQuadButtonsB = 4;
         $scope.activeQuadButtonB = 0;
+        $scope.numberOfActiveQuadButtonsF1 = 6;
+        $scope.activeQuadButtonF1 = 0;
+        $scope.numberOfActiveQuadButtonsF2 = 3;
+        $scope.activeQuadButtonF2 = 0;
+        $scope.numberOfActiveQuadButtonsF3 = 6;
+        $scope.activeQuadButtonF3 = 0;
         $scope.quadButtonsAutoStep = 5000;
         $scope.quadButtonsManual = [];
         $scope.detailsFullViews = [];
@@ -67,60 +78,63 @@
             
             $(window).scroll(function() {
 
-                $timeout.cancel($scope.timeScroll);
+                if ($location.path() === '/tv-mobilna')
+                {
+                    $timeout.cancel($scope.timeScroll);
 
-                $scope.timeScroll = $timeout(function() {
+                    $scope.timeScroll = $timeout(function() {
 
-                    var windowElement = $(window);
-                    var windowScrollTop = windowElement.scrollTop();
-                    var bgImage = $('.bg-image');
-                    var bgImageContainer = $('.bg-container');
+                        var windowElement = $(window);
+                        var windowScrollTop = windowElement.scrollTop();
+                        var bgImage = $('.bg-image');
+                        var bgImageContainer = $('.bg-container');
 
-                    var siteOferta = $('#site-oferta').offset().top - windowScrollTop;
-                    var siteFeatures = $('#site-features').offset().top - windowScrollTop;
-                    var siteFeatures2 = $('#site-features2').offset().top - windowScrollTop;
-                    var siteDetails = $('#site-details').offset().top - windowScrollTop;
-                    var siteTrial = $('#site-trial').offset().top - windowScrollTop;
-                    var siteContact = $('#site-contact').offset().top - windowScrollTop;
- 
-                    if (siteContact <= 0) {
-                        // console.log('siteContact');
-                        // bgImage.attr('src', 'img/bg_'+3+'.jpg');
-                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
-                        $scope.activeSelector = '#site-contact';
-                    } else if (siteTrial <= 0) {
-                        // console.log('siteTrial');
-                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
-                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
-                        $scope.activeSelector = '#site-trial';
-                    } else if (siteDetails <= 0) {
-                        // console.log('siteDetails');
-                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
-                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
-                        $scope.activeSelector = '#site-details';
-                    } else if (siteFeatures2 <= 0) {
-                        // console.log('siteFeatures2');
-                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
-                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
-                        $scope.activeSelector = '#site-features2';
-                    } else if (siteFeatures <= 0) {
-                        // console.log('siteFeatures');
-                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
-                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
-                        $scope.activeSelector = '#site-features';
-                    } else if (siteOferta <= 0) {
-                        // console.log('siteOferta');
-                        // bgImage.attr('src', 'img/bg_'+2+'.jpg');
-                        bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
-                        $scope.activeSelector = '#site-oferta';
-                    } else {
-                        // console.log('siteHeader');
-                        // bgImage.attr('src', 'img/bg_'+1+'.jpg');
-                        bgImageContainer.removeClass('bg-container-2').addClass('bg-container-1');
-                        $scope.activeSelector = '#site-header';
-                    }
+                        var siteOferta = $('#site-oferta').offset().top - windowScrollTop;
+                        var siteFeatures = $('#site-features').offset().top - windowScrollTop;
+                        var siteFeatures2 = $('#site-features2').offset().top - windowScrollTop;
+                        var siteDetails = $('#site-details').offset().top - windowScrollTop;
+                        var siteTrial = $('#site-trial').offset().top - windowScrollTop;
+                        var siteContact = $('#site-contact').offset().top - windowScrollTop;
+     
+                        if (siteContact <= 0) {
+                            // console.log('siteContact');
+                            // bgImage.attr('src', 'img/bg_'+3+'.jpg');
+                            bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                            $scope.activeSelector = '#site-contact';
+                        } else if (siteTrial <= 0) {
+                            // console.log('siteTrial');
+                            // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                            bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                            $scope.activeSelector = '#site-trial';
+                        } else if (siteDetails <= 0) {
+                            // console.log('siteDetails');
+                            // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                            bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                            $scope.activeSelector = '#site-details';
+                        } else if (siteFeatures2 <= 0) {
+                            // console.log('siteFeatures2');
+                            // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                            bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                            $scope.activeSelector = '#site-features2';
+                        } else if (siteFeatures <= 0) {
+                            // console.log('siteFeatures');
+                            // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                            bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                            $scope.activeSelector = '#site-features';
+                        } else if (siteOferta <= 0) {
+                            // console.log('siteOferta');
+                            // bgImage.attr('src', 'img/bg_'+2+'.jpg');
+                            bgImageContainer.removeClass('bg-container-1').addClass('bg-container-2');
+                            $scope.activeSelector = '#site-oferta';
+                        } else {
+                            // console.log('siteHeader');
+                            // bgImage.attr('src', 'img/bg_'+1+'.jpg');
+                            bgImageContainer.removeClass('bg-container-2').addClass('bg-container-1');
+                            $scope.activeSelector = '#site-header';
+                        }                    
 
-                }, 300);
+                    }, 300);
+                }
 
             });
 
@@ -132,6 +146,36 @@
             mainService.ShowWebsite($scope.showWebsiteData);
 
         });
+
+        $scope.GoToSubpage = function(activeSelector)
+        {
+            $scope.activeSelector = activeSelector;
+            if ($location.path() === '/tv-mobilna')
+            {
+                if (activeSelector === '#site-fortel')
+                {
+                    $location.path('/fortel');
+                }
+                else
+                {
+                    $scope.ScrollSite(activeSelector);                
+                }                
+            }
+            else
+            {
+                if (activeSelector === '#site-fortel')
+                {
+                    //
+                }
+                else
+                {
+                    $location.path('/tv-mobilna');
+                    $timeout(function() {
+                        $scope.ScrollSite(activeSelector);
+                    }, 1000);
+                }
+            }
+        };
 
         $( window ).resize(function() {
             $scope.OnWindowResize();
@@ -179,6 +223,30 @@
                         $scope.activeQuadButtonB = 0;
                     }
                 }
+                if (!$scope.quadButtonsManual[2])
+                {
+                    $scope.activeQuadButtonF1 ++;
+                    if ($scope.activeQuadButtonF1 >= $scope.numberOfActiveQuadButtonsF1)
+                    {
+                        $scope.activeQuadButtonF1 = 0;
+                    }
+                }
+                if (!$scope.quadButtonsManual[3])
+                {
+                    $scope.activeQuadButtonF2 ++;
+                    if ($scope.activeQuadButtonF2 >= $scope.numberOfActiveQuadButtonsF2)
+                    {
+                        $scope.activeQuadButtonF2 = 0;
+                    }
+                }
+                if (!$scope.quadButtonsManual[4])
+                {
+                    $scope.activeQuadButtonF3 ++;
+                    if ($scope.activeQuadButtonF3 >= $scope.numberOfActiveQuadButtonsF3)
+                    {
+                        $scope.activeQuadButtonF3 = 0;
+                    }
+                }
                 $scope.$apply();
             }, $scope.quadButtonsAutoStep);
         };
@@ -222,6 +290,13 @@
     }]); 
 
     app.controller('tvMobilnaController', ['$scope', 'mainService', function($scope, mainService){
+        angular.element(document).ready(function() {
+
+        });
+
+    }]);
+
+    app.controller('fortelController', ['$scope', 'mainService', function($scope, mainService){
         angular.element(document).ready(function() {
 
         });

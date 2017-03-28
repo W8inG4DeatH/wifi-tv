@@ -19,7 +19,19 @@
             <img class="bg-image" src="" alt="">
         </div>
 
-        <div class="main-content">
+        <div class="main-content" layout="column">
+
+        <nav class="top-menu-container" layout="row" layout-align="center">
+            <ul layout="row" layout-wrap>
+                <li ng-click="GoToSubpage('#site-oferta')" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-01');" ng-class="{'top-menu-element-active': (activeSelector == '#site-oferta')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">01</div><div class="element-desc element-desc-01">System</div></div></li>
+                <li ng-click="GoToSubpage('#site-features')" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-02');" ng-class="{'top-menu-element-active': (activeSelector == '#site-features')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">02</div><div class="element-desc element-desc-02">Zalety</div></div></li>
+                <li ng-click="GoToSubpage('#site-features2')" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-03');" ng-class="{'top-menu-element-active': (activeSelector == '#site-features2')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">03</div><div class="element-desc element-desc-03">Realizacja</div></div></li>
+                <li ng-click="GoToSubpage('#site-details')" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-04');" ng-class="{'top-menu-element-active': (activeSelector == '#site-details')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">04</div><div class="element-desc element-desc-04">Konfiguracja</div></div></li>
+                <li ng-click="GoToSubpage('#site-trial')" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-05');" ng-class="{'top-menu-element-active': (activeSelector == '#site-trial')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">05</div><div class="element-desc element-desc-05">Demo</div></div></li>
+                <li ng-click="GoToSubpage('#site-fortel')" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-06');" ng-class="{'top-menu-element-active': (activeSelector == '#site-fortel')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">06</div><div class="element-desc element-desc-06">Fortel</div></div></li>
+                <li ng-click="GoToSubpage('#site-contact')" ng-mouseover="SlideUpAndDownChildByClass($event,'.element-desc-07');" ng-class="{'top-menu-element-active': (activeSelector == '#site-contact')}" class="top-menu-element cursor-pointer"><div layout="row"><div class="element-number">07</div><div class="element-desc element-desc-07">Kontakt</div></div></li>
+            </ul>
+        </nav>
 
             <div ng-view></div>
 

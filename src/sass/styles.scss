@@ -388,6 +388,12 @@ divider
 {
 }
 
+.pdf-icon
+{
+	position: relative;
+	top: 10px;
+}
+
 .registration-button-container, .form-container
 {
 	@include transition();
