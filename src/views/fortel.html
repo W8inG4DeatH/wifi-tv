@@ -155,4 +155,230 @@
 		</div>
 	</section>	
 
+
+	<section id="site-header" class="header-section section section-1" layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="column" layout-align="center center">
+				<div class="title" layout="row" layout-align="center">
+					<h1>2 konkurs w ramach I osi PO PC<br>Pierwsze analizy złożonych wniosków</h1>
+				</div>
+				<div class="title" layout="row" layout-align="center">
+					<h2>8. Ogólnopolskie Forum Operatorów Telekomunikacyjnych FORTEL 2017</h2>
+				</div>
+			</div>
+			<div class="row desc-container" layout="row" layout-align="center">
+				<h3 class="desc">Iława, 27 marca 2017 r.</h3>
+			</div>
+		</div>
+	</section>
+	<section id="site-oferta" class="section section-2" layout="row">
+		<div class="container" layout="column">
+			<div class="container" layout="column"> 
+				<div class="row" layout="row">
+					<a href="assets/Fortel_-_konkurs.pdf" target="_blank"><h2>Pobierz w <img class="pdf-icon" src="img/pdf-icon_50x50.png"></h2></a>
+				</div>
+			</div>
+		</div>
+	</section>		
+	<section id="site-features" class="section section-1 " layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="row">
+				<h2>Obszary konkursowe w 2 konkursie</h2>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<divider></divider>
+				<div ng-click="activeQuadButtonF4 = 0; quadButtonsManual[5] = true;" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF4 === 0) || (quadButtons[0] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF4 = 1; quadButtonsManual[5] = true;" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF4 === 1) || (quadButtons[1] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF4 = 2; quadButtonsManual[5] = true;" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF4 === 2) || (quadButtons[2] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF4 = 3; quadButtonsManual[5] = true;" ng-mouseover="quadButtons[3] = true" ng-mouseleave="quadButtons[3] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF4 === 3) || (quadButtons[3] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF4 = 4; quadButtonsManual[5] = true;" ng-mouseover="quadButtons[4] = true" ng-mouseleave="quadButtons[4] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF4 === 4) || (quadButtons[4] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+			</div>
+		</div>
+		<div class="container feature-element-B-container" layout="column">
+			<div ng-if="activeQuadButtonF4 === 0" class="feature-element-B row" layout="row">
+				<div><p>79 obszarów</div>
+			</div>
+			<div ng-if="activeQuadButtonF4 === 1" class="feature-element-B row" layout="row">
+				<div><p>Ponad 3 mln gospodarstw domowych możliwych do objęcia zasięgiem</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF4 === 2" class="feature-element-B row" layout="row">
+				<div><p>Ponad 1 mln gospodarstw domowych do objęcia zasięgiem (minimum pokryciowe)</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF4 === 3" class="feature-element-B row" layout="row">
+				<div><p>9 841 szkół do podłączenia</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF4 === 4" class="feature-element-B row" layout="row">
+				<div><p>3,15 mld - łączna maksymalna wartość dofinansowania</p></div>
+			</div>
+		</div>
+	</section>
+	<section id="site-video" class="section section-2" layout="row">
+		<div class="container" layout="column">
+			<div class="container" layout="column">
+				<div class="row" layout="row">
+					<h2>Warunki techniczne w 2 konkursie</h2>
+				</div>
+				<div class="row" layout="row">
+					<divider></divider>			
+				</div>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<h3><strong>Wymagania określone w dokumentacji konkursowej:</strong></h3>
+				<p><ol><li>1. Minimalna przepustowość dla gospodarstw domowych: 30 Mb/s (w dół) i 6 Mb/s (w górę)</li>
+				<li>2. Minimalna przepustowość dla szkół 100 Mb/s (symetryczne)</li></ol></p>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<h3><strong>Wytyczne dotyczące modelu i metodyki określania pojemności infrastruktury dla drugiego naboru dla działania 1.1 POPC:</strong></h3>
+				<p><ol><li>1. Wykorzystano dane zebrane z rynku, dotyczące średniego wolumenu danych pobieranych miesięcznie przez użytkowników w sieciach szerokopasmowych wykonanych w różnych technologiach, statystyk ruchu oraz stosowanych przez operatorów modelach ruchu.</li>
+				<li>2. Rekomendowane wykorzystanie modelu Erlang C do wyznaczenia pojemności infrastruktury (model uwzględnia kolejkowanie, które występuje w usługach transmisji danych).</li>
+				<li>3. Wszyscy użytkownicy POPC, w tym znajdujący się na granicy komórki, muszą mieć zapewniony dostęp do łącza o przepływności 30/6 Mb/s.</li>
+				<li>4. Pojemność sektora, która będzie użyta na potrzeby modelu określana na poziomie maksymalnie 35% pojemności teoretycznej sektora, zagwarantowanej dla użytkowników POPC.</li>
+				<li>5. Godzina największego ruchu –15% ruchu dziennego.</li></ol></p>
+			</div>
+			<div class="container" layout="column">
+				<div class="row" layout="row">
+					<divider></divider>			
+				</div>
+				<div class="row" layout="row">
+					<h2>Obszary konkursowe w 2 konkursie</h2>
+				</div>
+				<div class="row" layout="row">
+					<divider></divider>			
+				</div>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<div class="container responsive-image-container" layout="column" flex="100" flex-gt-md="50">
+					<img class="responsive-image" src="img/fortel-obszary-konkursowe.jpg" alt="Fortel - obszary konkursowe">
+				</div>
+				<div class="container" layout="column" flex="100" flex-gt-md="50">
+					<h4>Legenda:</h4>
+					<divider></divider>
+					<p style="color: #cd3b0a">1234 liczba gospodarstw domowych w obszarze</p>
+					<p>567 liczba szkół w obszarze</p>
+					<div layout="row"><div class="legenda-obszar zlozony"></div><p>obszary, na które złożono wniosek</p></div>
+					<div layout="row"><div class="legenda-obszar niezlozony"></div><p>obszary, na które nie złożono wniosku</p></div>
+				</div>
+			</div>
+		</div>
+	</section>	
+	<section id="site-features" class="section section-1 " layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="row">
+				<h2>Obszary konkursowe w 2 konkursie – złożone wnioski</h2>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<divider></divider>
+				<div ng-click="activeQuadButtonF5 = 0; quadButtonsManual[6] = true;" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF5 === 0) || (quadButtons[0] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF5 = 1; quadButtonsManual[6] = true;" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF5 === 1) || (quadButtons[1] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF5 = 2; quadButtonsManual[6] = true;" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF5 === 2) || (quadButtons[2] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF5 = 3; quadButtonsManual[6] = true;" ng-mouseover="quadButtons[3] = true" ng-mouseleave="quadButtons[3] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF5 === 3) || (quadButtons[3] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF5 = 4; quadButtonsManual[6] = true;" ng-mouseover="quadButtons[4] = true" ng-mouseleave="quadButtons[4] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF5 === 4) || (quadButtons[4] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF5 = 5; quadButtonsManual[6] = true;" ng-mouseover="quadButtons[5] = true" ng-mouseleave="quadButtons[5] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF5 === 5) || (quadButtons[5] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+			</div>
+		</div>
+		<div class="container feature-element-container" layout="column">
+			<div ng-if="activeQuadButtonF5 === 0" class="feature-element row" layout="row">
+				<div><p>67 obszarów (85% wszystkich obszarów)</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF5 === 1" class="feature-element row" layout="row">
+				<div><p>Ponad 2,5 mln gospodarstw domowych możliwych do objęcia zasięgiem</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF5 === 2" class="feature-element row" layout="row">
+				<div><p>Ponad 888 tys. gospodarstw domowych do objęcia zasięgiem (minimum pokryciowe)</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF5 === 3" class="feature-element row" layout="row">
+				<div><p>8 149 szkół do podłączenia</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF5 === 4" class="feature-element row" layout="row">
+				<div><p>2,65 mld -łączna maksymalna wartość dofinansowania</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF5 === 5" class="feature-element row" layout="row">
+				<div><p>57 wnioskodawców (47 MŚP)</p>
+				<p>144 wnioski konkursowe (80 MŚP)</p></div>
+			</div>
+		</div>
+	</section>
+	<section id="site-features" class="section section-1" layout="column">
+		<div class="container" layout="column">
+			<div class="row" layout="row">
+				<h2>Obszary konkursowe w 2 konkursie – obszary bez wniosków</h2>
+			</div>
+			<div class="row" layout="row" layout-wrap>
+				<divider></divider>
+				<div ng-click="activeQuadButtonF6 = 0; quadButtonsManual[7] = true;" ng-mouseover="quadButtons[0] = true" ng-mouseleave="quadButtons[0] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF6 === 0) || (quadButtons[0] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF6 = 1; quadButtonsManual[7] = true;" ng-mouseover="quadButtons[1] = true" ng-mouseleave="quadButtons[1] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF6 === 1) || (quadButtons[1] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF6 = 2; quadButtonsManual[7] = true;" ng-mouseover="quadButtons[2] = true" ng-mouseleave="quadButtons[2] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF6 === 2) || (quadButtons[2] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF6 = 3; quadButtonsManual[7] = true;" ng-mouseover="quadButtons[3] = true" ng-mouseleave="quadButtons[3] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF6 === 3) || (quadButtons[3] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+				<div ng-click="activeQuadButtonF6 = 4; quadButtonsManual[7] = true;" ng-mouseover="quadButtons[4] = true" ng-mouseleave="quadButtons[4] = false" class="quad-button-container cursor-pointer"><div ng-show="(activeQuadButtonF6 === 4) || (quadButtons[4] === true)" class="quad-button"><img src="img/bolt-icon.png" alt="feature"></div></div>
+			</div>
+		</div>
+		<div class="container feature-element-B-container" layout="column">
+			<div ng-if="activeQuadButtonF6 === 0" class="feature-element-B row" layout="row">
+				<div><p>12 obszarów:</p>
+				<p><ul><li>&middot;&nbsp;5 w woj. lubelskim</li>
+				<li>&middot;&nbsp;3 w woj. mazowieckim</li>
+				<li>&middot;&nbsp;2 w woj. kujawsko-pomorskim</li>
+				<li>&middot;&nbsp;1 w woj. łódzkim</li>
+				<li>&middot;&nbsp;1 w woj. małopolskim</li></ul></p></div>
+			</div>
+			<div ng-if="activeQuadButtonF6 === 1" class="feature-element-B row" layout="row">
+				<div><p>Średnio 141 szkół na obszar (więcej niż średnia dla 79 obszarów – 125)</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF6 === 2" class="feature-element-B row" layout="row">
+				<div><p>Średnio 30 szkół „A” na obszar (więcej niż średnia dla 79 obszarów – 20)</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF6 === 3" class="feature-element-B row" layout="row">
+				<div><p>Średnie zobowiązanie pokryciowe 25% (mniej niż średnia dla 79 obszarów – 35%)</p></div>
+			</div>
+			<div ng-if="activeQuadButtonF6 === 4" class="feature-element-B row" layout="row">
+				<div><p>Średnia wartość dofinansowania na realizację zobowiązania pokryciowego 3 844 zł (więcej niż średnia dla 79 obszarów –3 097 zł)</p></div>
+			</div>
+		</div>
+	</section>
+	<section id="site-features" class="section section-2" layout="column">
+		<div class="container" layout="column">
+			<div class="container" layout="column">
+				<div class="row" layout="row">
+					<h2>Instrumenty finansowe w I osi PO PC - harmonogram</h2>
+				</div>
+				<div class="row" layout="row">
+					<divider></divider>			
+				</div>
+			</div>
+			<div class="row" layout="column">
+				<p>&middot;&nbsp;Beneficjent projektu – Bank Gospodarstwa Krajowego (menadżer funduszu funduszy)</p>
+				<p>&middot;&nbsp;Alokacja: prawie 1 mld zł</p>
+			</div>
+			<div class="row" layout="column">
+				<h3><strong>Pożyczka szerokopasmowa:</strong></h3>
+				<p>&nbsp;</p>
+				<p>&middot;&nbsp;Pożyczka na inwestycje w infrastrukturę szerokopasmową</p>
+				<p>&middot;&nbsp;Beneficjenci: MŚP</p>
+				<p>&middot;&nbsp;Kwota pożyczki: od 20 tys. zł do 10 mln zł</p>
+				<p>&middot;&nbsp;Okres finansowania: do 15 lat</p>
+				<p>&middot;&nbsp;Możliwa karencja w spłacie kapitału: do 2,5 roku</p>
+				<p>&middot;&nbsp;Oprocentowanie:
+				<ul><li>&nbsp;&nbsp;&middot;&nbsp;Preferencyjne</li>
+				<li>&nbsp;&nbsp;&middot;&nbsp;Oprocentowanie rynkowe oparte o stopę referencyjną KE</li></ol></p>
+			</div>
+		</div>
+	</section>	
+	<section id="site-video" class="section section-2" layout="row">
+		<div class="container" layout="column">
+			<div class="container" layout="column">
+				<div class="row" layout="row">
+					<h2>Instrumenty finansowe w I osi PO PC</h2>
+				</div>
+				<div class="row" layout="row">
+					<divider></divider>			
+				</div>
+			</div>
+			<div class="row" layout="row" layout="center">
+				<div class="container responsive-image-container" layout="column" flex="100">
+					<img class="responsive-image" src="img/fortel-instrumenty-finansowe.jpg" alt="Fortel - instrumenty finansowe">
+				</div>			
+			</div>
+		</div>
+	</section>	
+
 </main>

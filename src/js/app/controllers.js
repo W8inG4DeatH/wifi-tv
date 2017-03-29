@@ -48,6 +48,12 @@
         $scope.activeQuadButtonF2 = 0;
         $scope.numberOfActiveQuadButtonsF3 = 6;
         $scope.activeQuadButtonF3 = 0;
+        $scope.numberOfActiveQuadButtonsF4 = 5;
+        $scope.activeQuadButtonF4 = 0;
+        $scope.numberOfActiveQuadButtonsF5 = 6;
+        $scope.activeQuadButtonF5 = 0;
+        $scope.numberOfActiveQuadButtonsF6 = 5;
+        $scope.activeQuadButtonF6 = 0;
         $scope.quadButtonsAutoStep = 5000;
         $scope.quadButtonsManual = [];
         $scope.detailsFullViews = [];
@@ -245,6 +251,30 @@
                     if ($scope.activeQuadButtonF3 >= $scope.numberOfActiveQuadButtonsF3)
                     {
                         $scope.activeQuadButtonF3 = 0;
+                    }
+                }
+                if (!$scope.quadButtonsManual[5])
+                {
+                    $scope.activeQuadButtonF4 ++;
+                    if ($scope.activeQuadButtonF4 >= $scope.numberOfActiveQuadButtonsF4)
+                    {
+                        $scope.activeQuadButtonF4 = 0;
+                    }
+                }
+                if (!$scope.quadButtonsManual[6])
+                {
+                    $scope.activeQuadButtonF5 ++;
+                    if ($scope.activeQuadButtonF5 >= $scope.numberOfActiveQuadButtonsF5)
+                    {
+                        $scope.activeQuadButtonF5 = 0;
+                    }
+                }
+                if (!$scope.quadButtonsManual[7])
+                {
+                    $scope.activeQuadButtonF6 ++;
+                    if ($scope.activeQuadButtonF6 >= $scope.numberOfActiveQuadButtonsF6)
+                    {
+                        $scope.activeQuadButtonF6 = 0;
                     }
                 }
                 $scope.$apply();
